@@ -120,25 +120,25 @@ async def display_devoir(ctx):
     else :
         await ctx.send("Vous n'avez pas de devoir !")
 
-@bot.command(name='setup')
-async def new(ctx):
-    guild = ctx.message.guild
-    nameCategory = "Devoirs-BOT"
-    nameChannel1 = "Vos Devoirs"
-    nameChannel2 = "bot-suggestion-upgrade"
-    await ctx.send(content = f"*Création de la catégorie*")
-    await guild.create_category(str(nameCategory))
-    cat = discord.utils.get(ctx.guild.categories, name=str(nameCategory))
-    await guild.create_text_channel(str(nameChannel1), category=cat)
-    await ctx.send(content = f"*Création du premier channel*")
-    await guild.create_text_channel(str(nameChannel2), category=cat)
-    await ctx.send(content = f"*Création du deuxième channel*")
-    channel1 = discord.utils.get(ctx.guild.channels, name=str(nameChannel1))
-    channel1_id = channel1.id
-    channel2 = discord.utils.get(ctx.guild.channels, name=str(nameChannel2))
-    channel2_id = channel2.id
-    await ctx.send(content = f"*Setup Fini*")
-    return channel1_id, channel2_id
+# @bot.command(name='setup')
+# async def new(ctx):
+#     guild = ctx.message.guild
+#     nameCategory = "Devoirs-BOT"
+#     nameChannel1 = "Vos Devoirs"
+#     nameChannel2 = "bot-suggestion-upgrade"
+#     await ctx.send(content = f"*Création de la catégorie*")
+#     await guild.create_category(str(nameCategory))
+#     cat = discord.utils.get(ctx.guild.categories, name=str(nameCategory))
+#     await guild.create_text_channel(str(nameChannel1), category=cat)
+#     await ctx.send(content = f"*Création du premier channel*")
+#     await guild.create_text_channel(str(nameChannel2), category=cat)
+#     await ctx.send(content = f"*Création du deuxième channel*")
+#     channel1 = discord.utils.get(ctx.guild.channels, name=str(nameChannel1))
+#     channel1_id = channel1.id
+#     channel2 = discord.utils.get(ctx.guild.channels, name=str(nameChannel2))
+#     channel2_id = channel2.id
+#     await ctx.send(content = f"*Setup Fini*")
+#     return channel1_id, channel2_id
 
 
 bot.run(TOKEN)
